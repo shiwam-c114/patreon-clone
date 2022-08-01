@@ -1,8 +1,12 @@
 import React from 'react'
+import CreatorHome from '../dashboard/Creator/CreatorHome'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <CreatorHome />
+      
+    </div>
   )
 }
 
