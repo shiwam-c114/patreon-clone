@@ -7,7 +7,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import React from "react";
 import { useDisclosure } from '@chakra-ui/react'
 
-function Wall() {
+function MyPage() {
     const { isOpen, onToggle, onOpen, onClose } = useDisclosure()
 
     return (
@@ -124,4 +124,4 @@ function Wall() {
     );
 }
 
-export default Wall;
+export default MyPage;

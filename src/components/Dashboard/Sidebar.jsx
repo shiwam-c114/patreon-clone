@@ -26,6 +26,8 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { CgInsights } from "react-icons/cg";
 import { HiOutlineDatabase } from "react-icons/hi";
+import { useContext } from 'react';
+import { SidebarContext } from '../../context/SidebarContext';
 
 
 const LinkItems = [
@@ -69,6 +71,7 @@ export default function Sidebar({ children }) {
 
 
 const SidebarContent = ({ onClose, ...rest }) => {
+  const [,ToggleSidebarButtonValue] = useContext(SidebarContext)
   return (
     <Box
       bg={useColorModeValue('white', 'gray.900')}
@@ -87,7 +90,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem onClick={()=>{ToggleSidebarButtonValue(link.name)}} key={link.name} icon={link.icon}>
           {link.name}
         </NavItem>
       ))}
