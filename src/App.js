@@ -10,12 +10,14 @@ import Pro from "./pages/products/Pro";
 function App() {
   return (
    <>
-   <Pro/>
    <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signUp" element={<SignUp/>}/>
     <Route path="/pricing" element={<Pricing/>}/>
+    <Route path="/products/lite" element={<Lite/>}/>
+    <Route path="/products/premium" element={<Premium/>}/>
+    <Route path="/products/pro" element={<Pro/>}/>
    </Routes>
    </>
   );

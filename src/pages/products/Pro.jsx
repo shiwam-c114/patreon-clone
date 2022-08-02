@@ -28,7 +28,7 @@ function Pro() {
       </div>
       <div style={{backgroundColor:"white", width:"100%", display:"flex", justifyContent:"center", color:"white", paddingTop:"70px"}}>
         <div >
-          <img style={{width:"600px", padding:"50px"}} src="https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/product-pro-02-features-engage-your-patrons_2x.png" alt="" />
+          <img style={{width:"400px", padding:"50px"}} src="https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/product-pro-02-features-engage-your-patrons_2x.png" alt="" />
         </div>
         <div style={{display:"flex", justifyContent:"center", flexDirection:"column"}}>
         <Heading as='h3' size='lg' color="black" paddingBottom="40px">
@@ -70,7 +70,7 @@ function Pro() {
          </div>
          
          <div >
-          <img style={{width:"500px", padding:"0px"}} src="https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/product-pro-03-features-grow-your-business_2x.png" alt="" />
+          <img style={{width:"400px", padding:"0px"}} src="https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/product-pro-03-features-grow-your-business_2x.png" alt="" />
         </div>
       </div>
     </div>

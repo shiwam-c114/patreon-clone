@@ -4,13 +4,13 @@ import {useNavigate} from "react-router-dom"
 import { AllPlansComponents } from './AllPlansComponents'
 
 function Lite() {
-
+const theme="rgb(210, 149, 62)"
 
   const navigate=useNavigate()
   return (
     <>
     <div>
-      <div style={{backgroundColor:"rgb(232, 158, 20)", width:"100%", display:"flex", justifyContent:"center"}}>
+      <div style={{backgroundColor:theme, width:"100%", display:"flex", justifyContent:"center",color:"white"}}>
         <div >
           <img style={{width:"600px", padding:"50px"}} src="https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/product-lite-01-header_2x.png" alt="" />
         </div>
@@ -33,15 +33,15 @@ function Lite() {
         <Heading as='h3' size='lg' color="black" paddingBottom="40px">
           Membership essentials    
         </Heading>
-        <Heading as='h4' size='md' color="red.200"padding="30px 5px 2px 2px">
+        <Heading as='h4' size='md' color={theme}padding="30px 5px 2px 2px">
           Hosted creator page
         </Heading>
         <Text fontSize='sm' color="grey">Your creator page on patreon.com is where you invite fans to become<br/> patrons, and post updates and content just for them.</Text>
-        <Heading as='h4' size='md' color="red.200"padding="30px 5px 2px 2px">
+        <Heading as='h4' size='md' color={theme}padding="30px 5px 2px 2px">
         Patron communication tools
         </Heading>
         <Text fontSize='sm' color="grey">You own the relationship with patrons. Communicate directly via email,<br/> posts on your page, or with direct messaging.</Text>
-        <Heading as='h4' size='md' color="red.200"padding="30px 5px 2px 2px">
+        <Heading as='h4' size='md' color={theme}padding="30px 5px 2px 2px">
         Patreon workshops
         </Heading>
         <Text fontSize='sm' color="grey">Learn from our Creator Success team about how to set up your page, <br/>what to offer, how to talk about Patreon, and more.</Text>

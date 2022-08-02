@@ -74,10 +74,8 @@ export const AllPlansComponents = ({color, type}) => {
                 today
             </Heading>
             <Button  maxW={"220px"} onClick={()=>navigate("/signUp")} borderRadius={"100px"} bg='red.400' >Get started with {type} </Button>
-        </div>
-        
+        </div>        
     </div>
-    </Center>
+    </Center> 
   )
 }
-// {props?.data.typeOfStart}
