@@ -44,17 +44,19 @@ export const handleLogOut=()=>{
 export const handleUserLoginFetch=(enteredData)=>(dispatch)=>{
 
     console.log(enteredData)
-// dispatch(handleLoginLoading())
-// fetch(``,{
-//     method:"POST",
-//     body: JSON.stringify(enteredData),
-//     headers:{
-//         "Content-Type": "application/json"
-//     }
-// })
-// .then(res=>res.json())
-// .then(data=>dispatch(handleLoginSuccess(data)))
-// .catch(err=> dispatch(handleLoginErr()))
+dispatch(handleLoginLoading())
+fetch(`https://reqres.in/api/login`,{
+    method:"POST",
+    body: JSON.stringify(enteredData),
+    headers:{
+        "Content-Type": "application/json"
+    }
+})
+.then(res=>res.json())
+.then(data=>{console.log(data)
+    dispatch(handleLoginSuccess(data.token))})
+.catch(err=> {console.log(err)
+    dispatch(handleLoginErr())})
 
 
 }
@@ -63,17 +65,17 @@ export const handleUserLoginFetch=(enteredData)=>(dispatch)=>{
 export const handleRegisterFetch=(enteredData)=>(dispatch)=>{
 
     console.log(enteredData)
-    // dispatch(handleRegisterLoading())
-    // fetch(``,{
-    //     method:"POST",
-    //     body: JSON.stringify(enteredData),
-    //     headers:{
-    //         "Content-Type": "application/json"
-    //     }
-    // })
-    // .then(res=>res.json())
-    // .then(data=>dispatch(handleRegisterSuccess(data)))
-    // .catch(err=> dispatch(handleRegisterErr()))
+    dispatch(handleRegisterLoading())
+    fetch(`https://reqres.in/api/register`,{
+        method:"POST",
+        body: JSON.stringify(enteredData),
+        headers:{
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res=>res.json())
+    .then(data=>dispatch(handleRegisterSuccess(data.token)))
+    .catch(err=> dispatch(handleRegisterErr()))
 
 
 

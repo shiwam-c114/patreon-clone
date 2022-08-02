@@ -21,7 +21,7 @@ export const authReducer=(store=authInitialData, action)=>{
                 ...store,
                 loginLoading:false,
                 loginErr:false,
-                token:action.payload.data.token
+                token:action.payload
             }
         case USER_LOGIN_ERR:
             return{
@@ -40,7 +40,7 @@ export const authReducer=(store=authInitialData, action)=>{
                 ...store,
                 registerLoading:false,
                 registerErr:false,
-                token:action.payload.data.token
+                token:action.payload
             }
         case USER_REGISTER_ERR:
             return{

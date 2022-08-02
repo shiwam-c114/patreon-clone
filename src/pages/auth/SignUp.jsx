@@ -46,7 +46,11 @@ export const SignUp=()=> {
         if(email!==confirmMail){
             alert("please enter correct mail id")
         }else{
-        dispatch(handleRegisterFetch(userSignUpDetails))
+        dispatch(handleRegisterFetch(
+          {
+            email:userSignUpDetails.email,
+            password:userSignUpDetails.password
+          }))
         setUserSignUpDetails(SignUpDetails)
         }
         
@@ -110,7 +114,7 @@ export const SignUp=()=> {
               <Stack spacing={10}>
                 <Button
                 onClick={handleOncliCk}
-                  bg={'blue.400'}
+                  bg={'blue.600'}
                   color={'white'}
                   _hover={{
                     bg: 'blue.500',

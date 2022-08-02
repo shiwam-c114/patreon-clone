@@ -79,7 +79,7 @@ export const Login=()=> {
                 <Stack spacing={3}>
                 <Button
                 onClick={handleOncliCk}
-                  bg={'blue.400'}
+                  bg={'blue.600'}
                   color={'white'}
                   _hover={{
                     bg: 'blue.500',
