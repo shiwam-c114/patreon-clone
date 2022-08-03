@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import {Link} from "react-router-dom";
 // import { ReactNode } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -62,6 +62,7 @@ const NavLink = ({ children }) => (
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [OC, setOC] = useState(false)
   const navigate = useNavigate();
   return (
     <div style={{ position: "sticky", top: "0", zIndex:"1" }}>
@@ -82,11 +83,11 @@ export default function Navbar() {
               {/* <select name="product">
                 <option value=""></option>
               </select> */}
-              <Menu trigger={"hover"}>
-                <MenuButton onMouseOver={onOpen} as={Button} rightIcon={<ChevronDownIcon />} bg={"white"}>
+              <Menu isOpen={isOpen} trigger={"hover"}>
+                <MenuButton  onMouseEnter={onOpen} onMouseLeave={onClose} as={Button} rightIcon={<ChevronDownIcon />} bg={"white"}>
                   Product
                 </MenuButton>
-                <MenuList>
+                <MenuList  >
                   <MenuItem icon={<AddIcon />}>
                     <h4>Lite</h4>
                     <div>Simple Tools To setup recurring support from your fans</div>
@@ -104,8 +105,8 @@ export default function Navbar() {
               </Menu>
             </HStack>
             <HStack>
-              <Menu trigger={"hover"}>
-                <MenuButton as={Button} rightIcon={<ChevronDownIcon />} bg={"white"}>
+              <Menu isOpen={OC} >
+                <MenuButton onMouseEnter={()=>setOC(true)} onMouseLeave={()=>setOC(false)} as={Button} rightIcon={<ChevronDownIcon />} bg={"white"}>
                   For Creators
                 </MenuButton>
                 <MenuList>
