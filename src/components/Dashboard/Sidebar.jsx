@@ -12,6 +12,7 @@ import {
   useDisclosure,
   BoxProps,
   FlexProps,
+  Button,
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -26,8 +27,10 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { CgInsights } from "react-icons/cg";
 import { HiOutlineDatabase } from "react-icons/hi";
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { SidebarContext } from '../../context/SidebarContext';
+import CreateButton from './CreateButton';
+import { FaRegEdit } from 'react-icons/fa';
 
 
 const LinkItems = [
@@ -71,6 +74,8 @@ export default function Sidebar({ children }) {
 
 
 const SidebarContent = ({ onClose, ...rest }) => {
+  const [openBox, setOpenBox] = useState(false)
+
   const [,ToggleSidebarButtonValue] = useContext(SidebarContext)
   return (
     <Box
@@ -89,11 +94,17 @@ const SidebarContent = ({ onClose, ...rest }) => {
 
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
+      <Box>
       {LinkItems.map((link) => (
         <NavItem onClick={()=>{ToggleSidebarButtonValue(link.name)}} key={link.name} icon={link.icon}>
           {link.name}
         </NavItem>
       ))}
+       <Box textAlign="center">
+        <Button leftIcon={<FaRegEdit fill='black' />} colorScheme="whiteAlpha" margin="0 20px" width="12rem"  color="black" fontSize={"sm"} textAlign="center" variant={"outline"} onClick={()=>setOpenBox(!openBox)}>Create</Button>
+      </Box>
+      <CreateButton  props={{openBox, setOpenBox}} />
+      </Box>
     </Box>
   );
 };
