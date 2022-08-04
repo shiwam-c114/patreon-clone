@@ -2,13 +2,21 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/main/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Payments } from "./components/Payments";
 function App() {
   return (
     <>
-      <Navbar />
+
+      {
+          //This Will Not show Navbar at payment page as we have sidebar on payment page 
+          location.pathname !== '/payment' && <Navbar />
+      }
+
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/footer" element={<Footer />} />
+        <Route path="/payment" element={<Payments />}/>
       </Routes>
     </>
   );

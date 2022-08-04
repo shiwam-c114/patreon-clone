@@ -191,7 +191,7 @@ export default function Navbar() {
                                 pointerEvents='none'
                                 children={<SearchIcon color='gray.300' />}
                             />
-                            <Input type='tel' placeholder='Search For Patreons' style={{ borderRadius: "25px", backgroundColor: "rgb(245, 244, 242)" }} />
+                            <Input type='tel' placeholder='Search For Patreons' style={{ borderRadius: "25px", backgroundColor: "rgb(245, 244, 242)" }} focusBorderColor='none' />
                         </InputGroup>
             </Stack>
             <span onClick={()=> navigate("/footer")} style={{marginRight:"0", fontWeight:"500"}}>Log In</span>
