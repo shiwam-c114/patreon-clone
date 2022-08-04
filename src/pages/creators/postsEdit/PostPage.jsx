@@ -27,7 +27,7 @@ const [posting , setPosting]=React.useState(true)
       <div style={{paddingTop:"100px"}}>
         <div style={{margin:"20px 40px 20px 150px"}}>
           <Heading paddingBottom="15px" as="h3" size="lg">
-            Create {props.typeOfPost} Posts
+            Create {props.type} Posts
           </Heading>
         </div>
         <div style={{display:"flex", margin:"20px 40px 20px 150px", boxSizing:"border-box", flexDirection:"column", padding:"15px", width:"500px", boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}}>
