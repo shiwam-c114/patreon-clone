@@ -3,14 +3,16 @@ import Home from "./pages/main/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Payments } from "./components/Payments";
+import { PostPage } from "./pages/creators/postsEdit/PostPage";
 function App() {
   return (
     <>
+    <PostPage/>
 
-      {
+      {/* {
           //This Will Not show Navbar at payment page as we have sidebar on payment page 
           location.pathname !== '/payment' && <Navbar />
-      }
+      } */}
 
 
       <Routes>

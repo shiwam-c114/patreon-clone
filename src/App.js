@@ -11,11 +11,12 @@ import Pro from "./pages/products/Pro";
 import { EditPage } from "./pages/creators/edit/EditPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { PostPage } from "./pages/creators/postsEdit/PostPage";
 function App() {
   return (
    <>
    <Routes>
-    <Route path="/" element={<Home/>}/>
+    <Route path="/" element={<PostPage/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signUp" element={<SignUp/>}/>
     <Route path="/pricing" element={<Pricing/>}/>
@@ -25,7 +26,7 @@ function App() {
     <Route path="/creatorEditPage" element={<EditPage/>}/>
     <Route path="/creatorhome" element={<CreatorHome />} />
    </Routes>
-   <Footer />
+   {/* <Footer /> */}
    </>
   );
 }
