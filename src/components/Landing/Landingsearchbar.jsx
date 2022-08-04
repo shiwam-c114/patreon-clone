@@ -14,7 +14,7 @@ export const Landingsearchbar = () => {
                                 pointerEvents='none'
                                 children={<SearchIcon color='gray.300' />}
                             />
-                            <Input type='tel' placeholder='Search For Patreons' style={{ borderRadius: "25px", backgroundColor: "rgb(245, 244, 242)" }} />
+                            <Input type='tel' placeholder='Search For Patreons' style={{ borderRadius: "25px", backgroundColor: "rgb(245, 244, 242)" }} focusBorderColor='none'/>
                         </InputGroup>
                     </Stack>
                     <Button style={{ borderRadius: "25px", backgroundColor: "rgb(255, 66, 77)", color: "white", marginLeft: "2%" }}>Get Started</Button>
