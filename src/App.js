@@ -9,10 +9,11 @@ import Lite from "./pages/products/Lite";
 import Premium from "./pages/products/Premium";
 import Pro from "./pages/products/Pro";
 import { EditPage } from "./pages/creators/edit/EditPage";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 function App() {
   return (
    <>
-   <EditPage/>
    <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/login" element={<Login/>}/>
@@ -24,6 +25,7 @@ function App() {
     <Route path="/creatorEditPage" element={<EditPage/>}/>
     <Route path="/creatorhome" element={<CreatorHome />} />
    </Routes>
+   <Footer />
    </>
   );
 }
