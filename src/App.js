@@ -7,9 +7,11 @@ import Pricing from "./pages/pricing/Pricing"
 import Lite from "./pages/products/Lite";
 import Premium from "./pages/products/Premium";
 import Pro from "./pages/products/Pro";
+import { EditPage } from "./pages/creators/edit/EditPage";
 function App() {
   return (
    <>
+   <EditPage/>
    <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/login" element={<Login/>}/>
@@ -18,6 +20,7 @@ function App() {
     <Route path="/products/lite" element={<Lite/>}/>
     <Route path="/products/premium" element={<Premium/>}/>
     <Route path="/products/pro" element={<Pro/>}/>
+    <Route path="/creatorEditPage" element={<EditPage/>}/>
    </Routes>
    </>
   );
