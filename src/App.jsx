@@ -1,17 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/main/Home";
 import Navbar from "./components/Navbar";
-import { Music } from "./pages/creators/Music";
-import Nonprofits from "./pages/creators/Nonprofits";
-
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/Music" element={<Music />} />
-        <Route path="/Nonprofits" element={<Nonprofits />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
     </>
   );

@@ -5,10 +5,10 @@ import { SearchIcon } from '@chakra-ui/icons'
 export const Landingsearchbar = () => {
     return (
         <div style={{marginTop:"3%"}}>
-            <div style={{ width: "80%", margin: "auto", textAlign: "center"}}>
+            <div style={{ width: "70%", margin: "auto", textAlign: "center"}}>
                 <h1 style={{ fontSize: "42px", fontWeight: "700", color: "black" }}>Search the 200,000+ creators on Patreon</h1>
             <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center",marginTop:"4%", marginBottom:"8%"}}>
-                    <Stack spacing={4} style={{ width: "75%" }}>
+                    <Stack spacing={4} style={{ width: "75%" , padding:"2%"}}>
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
