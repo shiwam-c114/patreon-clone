@@ -1,19 +1,23 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/main/Home";
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar";
+import { Music } from "./pages/creators/Music";
+import Nonprofits from "./pages/creators/Nonprofits";
+
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/Music" element={<Music />} />
+        <Route path="/Nonprofits" element={<Nonprofits />} />
       </Routes>
     </>
   );
 }
 
 export default App;
-
 
 /*
 
