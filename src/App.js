@@ -8,13 +8,13 @@ import Pricing from "./pages/pricing/Pricing"
 import Lite from "./pages/products/Lite";
 import Premium from "./pages/products/Premium";
 import Pro from "./pages/products/Pro";
+import { EditPage } from "./pages/creators/edit/EditPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Payouts from "./components/Dashboard/Payouts";
 function App() {
   return (
    <>
-   {/* <Navbar/> */}
    <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/login" element={<Login/>}/>
@@ -23,6 +23,7 @@ function App() {
     <Route path="/products/lite" element={<Lite/>}/>
     <Route path="/products/premium" element={<Premium/>}/>
     <Route path="/products/pro" element={<Pro/>}/>
+    <Route path="/creatorEditPage" element={<EditPage/>}/>
     <Route path="/creatorhome" element={<CreatorHome />} />
     <Route path="/pricing" element={<Pricing />} />
     <Route path="/payouts" element={<Payouts />}/>
