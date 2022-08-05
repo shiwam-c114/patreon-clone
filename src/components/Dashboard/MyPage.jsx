@@ -346,7 +346,7 @@ function _ByMediaTier(post) {
                     : (a, b) => b.index - a.index
                   )
                   .map((post) => (
-                    <Post property={post} />
+                    <Post id={userData.id} property={post} />
                   ))}
               </Box>
             </TabPanel>
