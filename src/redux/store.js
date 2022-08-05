@@ -6,4 +6,8 @@ const rootReducer=combineReducers({
     auth:authReducer
 })
 
-export const store=createStore(rootReducer,compose(applyMiddleware(thunk)))
+export const store=createStore(rootReducer,compose(applyMiddleware(thunk)));
+
+store.subscriber=()=>{
+    console.log("State:", store.getState());
+}

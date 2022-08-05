@@ -16,7 +16,7 @@ import {
   import { ViewOffIcon } from "@chakra-ui/icons"
 import { handleUserLoginFetch } from '../../redux/auth/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 
   const loginDetails={
@@ -24,33 +24,37 @@ import { useNavigate } from 'react-router-dom';
     password:""
   }
 export const Login=()=> {
+    // console.log("rendering Login");
     const [userAuthData, setUserAuthData]=React.useState(loginDetails)
     const {email, password}=userAuthData
     const dispatch=useDispatch();
-    const navigate=useNavigate();
-
+    const  {token}  = useSelector(state => state.auth);
     const handleOnChange=(e)=>{
     const {name, value}=e.target
     setUserAuthData(prev=> ({...prev,[name]:value}));
-    console.log(userAuthData)
+    // console.log(userAuthData)
     }
 
     const handleOncliCk=()=>{
         console.log(userAuthData)
         dispatch(handleUserLoginFetch(userAuthData))
-        setUserAuthData(loginDetails)
+        setUserAuthData(loginDetails);
+
     }
 
 
     return (
-      <Flex
+      <>
+      {
+      token === null? 
+      (<Flex
         minH={'100vh'} 
         align={'center'}
         justify={'center'}
         bg={useColorModeValue('gray.50', 'gray.800')}>
         <Stack spacing={8} mx={'auto'} minW={"lg"} maxW={'xlg'} py={12} px={6}>
           <Stack align={'center'}>
-            <Text fontSize={'1xl'}>Log in</Text>
+            <Text fontSize={'3xl'}>Log in</Text>
             {/* <Text fontSize={'lg'} color={'gray.600'}>
               to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
             </Text> */}
@@ -116,8 +120,11 @@ export const Login=()=> {
               </Stack>
             </Stack>
           </Box>
-          <Text align={'center'} fontSize={'1xl'}>Already have an account? <Button padding={"0px"} onClick={()=>{navigate("/signUp")}} bg={'heritance'}><Link to={"/login"} color={'blue.400'}>Sign up</Link></Button></Text>
+          <Text align={'center'} fontSize={'1xl'}>Don't have an account? <Button padding={"0px"} onClick={()=>{navigate("/signUp")}} bg={'heritance'}><Link to={"/login"} color={'blue.400'}>Sign up</Link></Button></Text>
         </Stack>
-      </Flex>
+      </Flex>): <Navigate to={"/"}></Navigate>
+      
+      }
+      </>
     );
   }

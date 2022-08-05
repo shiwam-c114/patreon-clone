@@ -32,14 +32,14 @@ function MyPage() {
       <div>
         <Img
           width={"5rem"}
-          position="absolute"
-          left={"55%"}
-          top={"250px"}
+          position="relative"
+          left={"46%"}
+          top={"-35px"}
           borderRadius={"50%"}
           src="https://c10.patreonusercontent.com/4/patreon-media/p/campaign/9031616/cdc57a37a3a64b7bb9a57640e5d31a37/eyJ3IjoyMDB9/1.jpg?token-time=2145916800&token-hash=JCnpYxmabRemCcftRVX4bAP9_Wjgrl85wXi5PqF030s%3D"
         ></Img>
         <Box>
-          <Flex justifyContent={"end"} gap={"10px"} padding={"10px"}>
+          <Flex justifyContent={"end"} gap={"10px"} padding={"5px"} border={"1px solid red"}>
             <CreateButton  props={{openBox, setOpenBox}} />
             <Button onClick={()=>{setOpenBox(!openBox)}} leftIcon={<EditIcon />} colorScheme={"facebook"}>
               Create

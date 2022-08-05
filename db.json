@@ -1,0 +1,231 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "abcd@email.com",
+      "password": "admin",
+      "creator_mode": {
+        "creatormode_name": "John Doe",
+        "bgImg": "https://picsum.photos/id/237/200/300",
+        "profilePic": "https://picsum.photos/id/23/200/300",
+        "creatorType": "video",
+        "posts": [
+          {
+            "type": "image",
+            "title": "Marvel",
+            "desc": "This Is a Dummy Post 1",
+            "date": "20 July 2022",
+            "time": "19:24",
+            "content_url": "https://c10.patreonusercontent.com/4/patreon-media/p/post/70045669/428f8fb3df4143818285f5ff3c4bb6da/eyJ3Ijo2MjB9/1.jpg?token-time=1660867200&token-hash=AlBwP3LO_pWGwwgtIPJyFSkFXnQ6NlcQIo-eTi-O12k%3D",
+            "visibility": "visible",
+            "likes": "234"
+          }
+        ],
+        "tiers": [
+          {
+            "name": "Tier 1",
+            "monthlyPrice": "4.25",
+            "tierdescription": "this is tier description",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content"
+          },
+          {
+            "name": "Tier 2",
+            "monthlyPrice": "6",
+            "tierdescription": "this is tier description333",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content,Digital Downloads "
+          },
+          {
+            "name": "Tier 3",
+            "monthlyPrice": "15",
+            "tierdescription": "this is tier description 23232232",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content,Digital Downloads, Early Ticket Access"
+          }
+        ],
+        "subscriber_patrons": [
+          {
+            "name": "Jack Jack",
+            "email": "jack@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Jimmy",
+            "email": "jimmy@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Andrew",
+            "email": "andrew@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Adam",
+            "email": "adam@email.com",
+            "current_tier": "Tier 1"
+          }
+        ]
+      },
+      "patron_mode": {
+        "subscribed_to": [
+          {
+            "name": "Jack Jack",
+            "email": "jack@email.com"
+          },
+          {
+            "name": "Jimmy",
+            "email": "jimmy@email.com"
+          },
+          {
+            "name": "Andrew",
+            "email": "andrew@email.com"
+          },
+          {
+            "name": "Adam",
+            "email": "adam@email.com"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "email": "abc@email.com",
+      "password": "admin",
+      "creator_mode": {
+        "creatormode_name": "John Doe",
+        "bgImg": "https://picsum.photos/id/237/200/300",
+        "profilePic": "https://picsum.photos/id/23/200/300",
+        "creatorType": "video",
+        "posts": [
+          {
+            "type": "image",
+            "title": "Marvel",
+            "desc": "This Is a Dummy Post 1",
+            "date": "20 July 2022",
+            "time": "19:24",
+            "content_url": "https://c10.patreonusercontent.com/4/patreon-media/p/post/70045669/428f8fb3df4143818285f5ff3c4bb6da/eyJ3Ijo2MjB9/1.jpg?token-time=1660867200&token-hash=AlBwP3LO_pWGwwgtIPJyFSkFXnQ6NlcQIo-eTi-O12k%3D",
+            "visibility": "visible",
+            "likes": "234"
+          }
+        ],
+        "tiers": [
+          {
+            "name": "Tier 1",
+            "monthlyPrice": "4.25",
+            "tierdescription": "this is tier description",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content"
+          },
+          {
+            "name": "Tier 2",
+            "monthlyPrice": "6",
+            "tierdescription": "this is tier description333",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content,Digital Downloads "
+          },
+          {
+            "name": "Tier 3",
+            "monthlyPrice": "15",
+            "tierdescription": "this is tier description 23232232",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content,Digital Downloads, Early Ticket Access"
+          }
+        ],
+        "subscriber_patrons": [
+          {
+            "name": "Jack Jack",
+            "email": "jack@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Jimmy",
+            "email": "jimmy@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Andrew",
+            "email": "andrew@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Adam",
+            "email": "adam@email.com",
+            "current_tier": "Tier 1"
+          }
+        ]
+      },
+      "patron_mode": {
+        "subscribed_to": [
+          {
+            "name": "Jack Jack",
+            "email": "jack@email.com"
+          },
+          {
+            "name": "Jimmy",
+            "email": "jimmy@email.com"
+          },
+          {
+            "name": "Andrew",
+            "email": "andrew@email.com"
+          },
+          {
+            "name": "Adam",
+            "email": "adam@email.com"
+          }
+        ]
+      }
+    },
+    {
+      "email": "atharvatribhuwane@dpcoepune.edu.in",
+      "password": "admin",
+      "creator_mode": {
+        "creatormode_name": "Atharva",
+        "bgImg": "",
+        "profilePic": "",
+        "creatorType": "",
+        "posts": [],
+        "tiers": [],
+        "subscriber_patrons": []
+      },
+      "patron_mode": {
+        "subscribed_to": []
+      },
+      "id": 3
+    },
+    {
+      "email": "amar@email.com",
+      "password": "password",
+      "creator_mode": {
+        "creatormode_name": "AMAR",
+        "bgImg": "",
+        "profilePic": "",
+        "creatorType": "",
+        "posts": [],
+        "tiers": [],
+        "subscriber_patrons": []
+      },
+      "patron_mode": {
+        "subscribed_to": []
+      },
+      "id": 4
+    },
+    {
+      "email": "dummy@fmail.com",
+      "password": "password",
+      "creator_mode": {
+        "creatormode_name": "Dummy Account",
+        "bgImg": "",
+        "profilePic": "",
+        "creatorType": "",
+        "posts": [],
+        "tiers": [],
+        "subscriber_patrons": []
+      },
+      "patron_mode": {
+        "subscribed_to": []
+      },
+      "id": 5
+    }
+  ]
+}

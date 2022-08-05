@@ -1,6 +1,9 @@
 import React from "react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
+import { useNavigate } from 'react-router-dom';
+
 export const Landingtop = () => {
+  const navigate = useNavigate();
   return (
     <div style={{ backgroundColor: "#141518", display: "flex" }}>
       <div style={{ width: "50%", padding: "100px 125px 100px 125px" }}>
@@ -24,6 +27,7 @@ export const Landingtop = () => {
             color: "white",
             marginTop: "32px",
           }}
+          onClick={()=>navigate("/login")}
         >
           Get Started
         </Button>
