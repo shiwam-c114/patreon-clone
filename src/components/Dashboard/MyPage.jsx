@@ -105,12 +105,12 @@ function _ByMediaTier(post) {
         <Img
           width={"5rem"}
           height={"5rem"}
-          position="absolute"
-          left={"55%"}
-          top={"250px"}
+          position="relative"
+          left={"47%"}
+          top={"-10"}
           borderRadius={"50px"}
           src={`${userData?.creator_mode?.profilePic}`}></Img>
-        <Box>
+        <Box marginTop={"-70px"}>
           <Flex justifyContent={"end"} gap={"10px"} padding={"10px"}>
             <CreateButton props={{ openBox, setOpenBox }} />
             <Button

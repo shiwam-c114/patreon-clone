@@ -11,6 +11,17 @@ import {
   Tabs,
 } from "@chakra-ui/react";
 import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from "@chakra-ui/react";
+import {
   Stat,
   StatLabel,
   StatNumber,
@@ -20,7 +31,27 @@ import {
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import React from "react";
 function Insights({ userData }) {
-  console.log(userData);
+  // console.log(userData);
+  let today = new Date();
+  let time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  function _count(str) {
+    let res = 0;
+    userData.creator_mode.subscriber_patrons.forEach((element) => {
+      if (element.status === str) res++;
+    });
+    return res;
+  }
+
+  const _percentage = (str) =>
+    (_count(str) / userData.creator_mode.subscriber_patrons.length) * 100;
+  function _showUsers(str) {
+    let res = [];
+    userData.creator_mode.subscriber_patrons.forEach((element) => {
+      if (element.status === str) res.push(element);
+    });
+    return res;
+  }
   return (
     <>
       <Box fontSize={"sm"} margin={"70px"}>
@@ -52,7 +83,7 @@ function Insights({ userData }) {
                       <MenuItem>Attend a Workshop</MenuItem>
                     </MenuList>
                   </Menu>
-                  <p>last updated at {"time"}</p>
+                  <p>last updated at {time}</p>
                 </Flex>
 
                 <Box marginTop={"60px"}>
@@ -61,30 +92,30 @@ function Insights({ userData }) {
                       <Tab>
                         <Stat>
                           <StatLabel>Acitve patrons</StatLabel>
-                          <StatNumber>0</StatNumber>
+                          <StatNumber>{_count("active")}</StatNumber>
                           <StatHelpText>
                             <StatArrow type="increase" />
-                            0%
+                            {_percentage("active")}%
                           </StatHelpText>
                         </Stat>
                       </Tab>
                       <Tab>
                         <Stat>
-                          <StatLabel>Active</StatLabel>
-                          <StatNumber>0</StatNumber>
+                          <StatLabel>New</StatLabel>
+                          <StatNumber>{_count("new")}</StatNumber>
                           <StatHelpText>
                             <StatArrow type="increase" />
-                            0%
+                            {_percentage("new")}%
                           </StatHelpText>
                         </Stat>
                       </Tab>
                       <Tab>
                         <Stat>
-                          <StatLabel>cancelled</StatLabel>
-                          <StatNumber>0</StatNumber>
+                          <StatLabel>Cancelled</StatLabel>
+                          <StatNumber>{_count("cancelled")}</StatNumber>
                           <StatHelpText>
                             <StatArrow type="increase" />
-                            0%
+                            {_percentage("cancelled")}%
                           </StatHelpText>
                         </Stat>
                       </Tab>
@@ -92,13 +123,82 @@ function Insights({ userData }) {
 
                     <TabPanels>
                       <TabPanel>
-                        <>active users</>
+                        <>
+                          <TableContainer>
+                            <Table size="sm">
+                              <Thead>
+                                <Tr>
+                                  <Th>Name</Th>
+                                  <Th>Email</Th>
+                                  <Th>Current tier</Th>
+                                  <Th>Pledge</Th>
+                                </Tr>
+                              </Thead>
+                              <Tbody>
+                                {_showUsers("active").map((user) => (
+                                  <Tr>
+                                    <Td>{user.name}</Td>
+                                    <Td>{user.email}</Td>
+                                    <Td>{user.current_tier}</Td>
+                                    <Td>{user.pledge}</Td>
+                                  </Tr>
+                                ))}
+                              </Tbody>
+                            </Table>
+                          </TableContainer>
+                        </>
                       </TabPanel>
                       <TabPanel>
-                        <p>two!</p>
+                        <>
+                          <TableContainer>
+                            <Table size="sm">
+                              <Thead>
+                                <Tr>
+                                  <Th>Name</Th>
+                                  <Th>Email</Th>
+                                  <Th>Current tier</Th>
+                                  <Th>Pledge</Th>
+                                </Tr>
+                              </Thead>
+                              <Tbody>
+                                {_showUsers("new").map((user) => (
+                                  <Tr>
+                                    <Td>{user.name}</Td>
+                                    <Td>{user.email}</Td>
+                                    <Td>{user.current_tier}</Td>
+                                    <Td>{user.pledge}</Td>
+                                  </Tr>
+                                ))}
+                              </Tbody>
+                            </Table>
+                          </TableContainer>
+                        </>
                       </TabPanel>
                       <TabPanel>
-                        <p>three!</p>
+                        <>
+                          <TableContainer>
+                            <Table size="sm">
+                              <Thead>
+                                <Tr>
+                                  <Th>Name</Th>
+                                  <Th>Email</Th>
+                                  <Th>Current tier</Th>
+                                  <Th>Pledge</Th>
+                                </Tr>
+                              </Thead>
+                              <Tbody>
+                                {_showUsers("cancelled").map((user) => (
+                                  <Tr>
+                                    <Td>{user.name}</Td>
+                                    <Td>{user.email}</Td>
+                                    <Td>{user.current_tier}</Td>
+                                    <Td>{user.pledge}</Td>
+                                  </Tr>
+                                ))}
+                              </Tbody>
+                            </Table>
+                          </TableContainer>
+                        </>
                       </TabPanel>
                     </TabPanels>
                   </Tabs>
