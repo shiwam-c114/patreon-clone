@@ -1,10 +1,10 @@
 import React from 'react'
-import {Landingtop} from "../../components/Landingtop"
-import { Landingsearchbar } from '../../components/Landingsearchbar'
-import {Landingcommcard1} from '../../components/Landingcommcard'
-import {Landingmid} from "../../components/Landingmid";
-import { Landingbottom } from '../../components/Landingbottom';
-import { Landingwhouses } from '../../components/Landingwhouses';
+import {Landingtop} from "../../components/Landing/Landingtop"
+import { Landingsearchbar } from '../../components/Landing/Landingsearchbar'
+import {Landingcommcard1} from '../../components/Landing/Landingcommcard'
+import {Landingmid} from "../../components/Landing/Landingmid";
+import { Landingbottom } from '../../components/Landing/Landingbottom';
+import { Landingwhouses } from '../../components/Landing/Landingwhouses';
 function Home() {
   return (
     <div>
