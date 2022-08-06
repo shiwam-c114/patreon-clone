@@ -9,29 +9,33 @@ import {
   DrawerContent,
   Text,
   useDisclosure,
-  BoxProps,
-  FlexProps,
   Button,
   Link,
+  Avatar,
+  Portal,
 } from "@chakra-ui/react";
+import { FiHome, FiSettings, FiMenu, FiMail } from "react-icons/fi";
 import {
-  FiHome,
-  FiCompass,
-  FiStar,
-  FiSettings,
-  FiMenu,
-  FiMail,
-} from "react-icons/fi";
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from "@chakra-ui/react";
 
 import { IoPeopleOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { CgInsights } from "react-icons/cg";
 import { HiOutlineDatabase } from "react-icons/hi";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../../context/SidebarContext";
 import CreateButton from "./CreateButton";
 import { FaRegEdit } from "react-icons/fa";
-import {Navigate, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LinkItems = [
   { name: "My page", icon: FiHome },
@@ -43,11 +47,12 @@ const LinkItems = [
   { name: "Settings", icon: FiSettings },
 ];
 
-export default function Sidebar({ children }) {
+export default function Sidebar({ userData, children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
+        userData={userData}
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
       />
@@ -70,10 +75,10 @@ export default function Sidebar({ children }) {
   );
 }
 
-const SidebarContent = ({ onClose, ...rest }) => {
+const SidebarContent = ({ uData, userData, onClose, ...rest }) => {
   const [openBox, setOpenBox] = useState(false);
-  const n = useNavigate()
-
+  const n = useNavigate();
+  console.log(userData, uData, rest, onClose);
   const [, ToggleSidebarButtonValue] = useContext(SidebarContext);
   return (
     <Box
@@ -83,15 +88,18 @@ const SidebarContent = ({ onClose, ...rest }) => {
       w={{ base: "full", md: 60 }}
       pos="fixed"
       h="full"
+      // zIndex={"2000"}
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Box
-          onClick={()=>{n("/")}}
+          onClick={() => {
+            n("/");
+          }}
           cursor={"pointer"}
           _hover={{ opacity: "80%" }}>
           <svg
             fill="#ff424d"
-            width={"1em"}
+            width={"1.2em"}
             viewBox="0 0 569 546"
             xmlns="http://www.w3.org/2000/svg">
             <title>Patreon logo</title>
@@ -139,6 +147,98 @@ const SidebarContent = ({ onClose, ...rest }) => {
           </Button>
         </Box>
         <CreateButton props={{ openBox, setOpenBox }} />
+
+        <Popover padding="0" margin="0">
+          <PopoverTrigger>
+            <Box
+              _hover={{ backgroundColor: "gray.100" }}
+              borderWidth={1}
+              boxSize="border-box"
+              width="15rem"
+              backgroundColor={"white"}
+              pos={"fixed"}
+              p="13px 10px"
+              cursor={"pointer"}
+              bottom="0">
+              <Flex>
+                <Avatar
+                  size={"sm"}
+                  name={`${userData?.creator_mode?.creatormode_name}`}
+                  src={`${userData?.creator_mode?.profilePic}`}
+                />
+                <Box pl={"1rem"}>
+                  <Text>{userData?.creator_mode?.creatormode_name}</Text>
+                  <Text fontSize={"sm"} mt="-1.5" color="gray">
+                    {userData?.creator_mode?.creatorType}
+                  </Text>
+                </Box>
+              </Flex>
+            </Box>
+          </PopoverTrigger>
+
+          <PopoverContent width={"14rem"}>
+            <PopoverBody p="0">
+              {/* here in the children element of navlink i can add any element */}
+              <NavItem>
+                <Box
+                  onClick={() => n("/creatorhome")}
+                  _hover={{ backgroundColor: "gray.100" }}
+                  // borderWidth={1}
+                  boxSize="border-box"
+                  // width="15rem"
+                  // backgroundColor={"white"}
+                  // p="13px 10px"
+                  cursor={"pointer"}
+                  bottom="0">
+                  <Flex>
+                    <Avatar
+                      size={"sm"}
+                      name={`${userData?.creator_mode?.creatormode_name}`}
+                      src={`${userData?.creator_mode?.profilePic}`}
+                    />
+                    <Box pl={"1rem"}>
+                      <Text>{userData?.creator_mode?.creatormode_name}</Text>
+                      <Text fontSize={"sm"} mt="-1.5" color="gray">
+                        {"creator"}
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Box>
+              </NavItem>
+
+              <NavItem>
+                <Box
+                  _hover={{ backgroundColor: "gray.100" }}
+                  // borderWidth={1}
+                  boxSize="border-box"
+                  // width="15rem"
+                  // backgroundColor={"white"}
+                  // p="13px 10px"
+                  cursor={"pointer"}
+                  bottom="0">
+                  <Flex>
+                    <Avatar
+                      size={"sm"}
+                      name={`${userData?.patron_mode?.patronmode_name}`}
+                      src={`${userData?.patron_mode?.profilePic}`}
+                    />
+                    <Box pl={"1rem"}>
+                      <Text>{userData?.patron_mode?.patronmode_name}</Text>
+                      <Text fontSize={"sm"} mt="-1.5" color="gray">
+                        {"patron"}
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Box>
+              </NavItem>
+            </PopoverBody>
+            <PopoverFooter>
+              <NavItem>Creator resources</NavItem>
+              <NavItem>Help center & FAQ</NavItem>
+              <NavItem>Log out</NavItem>
+            </PopoverFooter>
+          </PopoverContent>
+        </Popover>
       </Box>
     </Box>
   );

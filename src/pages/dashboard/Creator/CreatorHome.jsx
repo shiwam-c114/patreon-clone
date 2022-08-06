@@ -23,12 +23,12 @@ function CreatorHome() {
 
   return (
     <Flex>
-      <Sidebar />
+      <Sidebar userData={userData} />
 
       <Box width="100vw">
         {!userData.id ? (
           <Center h="100vh">
-          <CircularProgress isCentered isIndeterminate color="blue.600" />
+            <CircularProgress isCentered isIndeterminate color="blue.600" />
           </Center>
         ) : sidebarButtonValue === "My page" ? (
           <MyPage userData={userData} />
