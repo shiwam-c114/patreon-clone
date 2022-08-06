@@ -12,11 +12,12 @@ import { EditPage } from "./pages/creators/edit/EditPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { PostPage } from "./pages/creators/postsEdit/PostPage";
+import { FeedCard } from "./components/patron/feed/FeedCard";
 function App() {
   return (
    <>
    <Routes>
-    <Route path="/" element={<PostPage/>}/>
+    <Route path="/" element={<FeedCard/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signUp" element={<SignUp/>}/>
     <Route path="/pricing" element={<Pricing/>}/>

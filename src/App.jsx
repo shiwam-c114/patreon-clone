@@ -4,22 +4,17 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Payments } from "./components/Payments";
 import { PostPage } from "./pages/creators/postsEdit/PostPage";
+import { FeedCard } from "./components/patron/feed/FeedCard";
 function App() {
   return (
     <>
-    <PostPage/>
-
-      {/* {
-          //This Will Not show Navbar at payment page as we have sidebar on payment page 
-          location.pathname !== '/payment' && <Navbar />
-      } */}
-
-
-      <Routes>
+    <FeedCard/>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/footer" element={<Footer />} />
+        <Route path="/feedCard"element={<FeedCard/>}/>
         <Route path="/payment" element={<Payments />}/>
-      </Routes>
+      </Routes> */}
     </>
   );
 }

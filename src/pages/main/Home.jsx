@@ -5,6 +5,7 @@ import {Landingcommcard1} from '../../components/Landing/Landingcommcard'
 import {Landingmid} from "../../components/Landing/Landingmid";
 import { Landingbottom } from '../../components/Landing/Landingbottom';
 import { Landingwhouses } from '../../components/Landing/Landingwhouses';
+import { FeedCard } from '../../components/patron/feed/FeedCard';
 function Home() {
   return (
     <div>

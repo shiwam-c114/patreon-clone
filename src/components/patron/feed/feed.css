@@ -1,0 +1,24 @@
+.commentsCard{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+.commentsCard>div{
+    display: flex;
+    padding-bottom: 20px;
+}
+.feedCard{
+    display:flex;
+    flex-direction:column;
+    border: 2px solid red;
+    width:500px;
+    box-sizing:border-box;
+    padding:15px
+}
+.postImage{
+    width: 100%;
+    padding-bottom: 20px;
+
+}
