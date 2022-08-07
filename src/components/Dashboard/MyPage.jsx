@@ -104,6 +104,7 @@ function _ByMediaTier(post) {
       <div>
         <Img
           width={"5rem"}
+
           height={"5rem"}
           position="relative"
           left={"47%"}

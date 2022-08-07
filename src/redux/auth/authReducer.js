@@ -2,13 +2,14 @@ import { USER_LOGIN_ERR, USER_LOGIN_LOADING, USER_LOGIN_SUCCESS, USER_LOG_OUT, U
 
 
 const authInitialData={
-    token:"",
+    token:null,
     loginLoading:false,
     loginErr:false,
     registerLoading:false,
     registerErr:false
 }
 export const authReducer=(store=authInitialData, action)=>{
+    // console.log(store,action)
     switch (action.type) {
         case USER_LOGIN_LOADING:
             return{
