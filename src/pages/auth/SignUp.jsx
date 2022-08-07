@@ -65,7 +65,8 @@ export const SignUp = () => {
           }
         })
           .then(res => res.json())
-          .then(data => {console.log(data), navigate('/login')})
+          .then(data => {console.log(data)
+             navigate('/login')})
           .catch(err => console.log(err))
       
     }

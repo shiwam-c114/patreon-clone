@@ -59,7 +59,7 @@ export const CreatePost = () => {
         })
           .then((res)=>res.json())
           .then((res)=>console.log("res:",res))
-          .catch((err)=>console.log(error));
+          .catch(err=>console.log(err));
     }
     useEffect(() => {
       async function getData(){

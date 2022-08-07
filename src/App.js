@@ -11,7 +11,7 @@ import Pro from "./pages/products/Pro";
 import { EditPage } from "./pages/creators/edit/EditPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
+import { MembershipPage } from "./pages/patron/membership/MembershipPage";
 import Video from "./pages/creators/Video";
 import Podcast from "./pages/creators/Podcast";
 import Music from "./pages/creators/Music";
@@ -31,7 +31,19 @@ function App() {
   const { token } = useSelector(state => state.auth);
 
   return (
-    <>
+   <>
+   <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/signUp" element={<SignUp/>}/>
+    <Route path="/pricing" element={<Pricing/>}/>
+    <Route path="/products/lite" element={<Lite/>}/>
+    <Route path="/products/premium" element={<Premium/>}/>
+    <Route path="/products/pro" element={<Pro/>}/>
+    <Route path="/creatorEditPage" element={<EditPage/>}/>
+    <Route path="/creatorhome" element={<CreatorHome />} />
+   </Routes>
+   {/* <Footer /> */}
       {
         //This Will Not show Navbar at payment page as we have sidebar on payment page 
          !token?
