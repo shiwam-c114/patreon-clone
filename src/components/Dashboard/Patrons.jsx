@@ -1,9 +1,25 @@
-import { Box, Button, Flex, Heading, Input, InputGroup, InputLeftAddon, InputLeftElement, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Input, InputGroup, InputLeftAddon, InputLeftElement, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from "@chakra-ui/react";
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { FaSort } from "react-icons/fa";
 
-function Patrons() {
+function Patrons({ userData }) {
+  console.log(userData.creator_mode.subscriber_patrons)
+  const patrons = userData.creator_mode.subscriber_patrons
+let today = new Date();
+let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
   return (
     <>
       <Box fontSize={"sm"} margin={"70px"}>
@@ -26,80 +42,122 @@ function Patrons() {
                       children={<BsSearch />}></InputLeftElement>
                     <Input placeholder="Search for name or email"></Input>
                   </InputGroup>
-                  <Button>Message</Button>
-                  <Button>CSV</Button>
-                  <Button>As of {"time"}</Button>
+                  <Button size={"sm"}>Message</Button>
+                  <Button size={"sm"}>CSV</Button>
+                  <Text color={"gray"} pl={3} fontSize={"sm"}>As of {time}</Text>
                 </Flex>
+
                 <Flex gap="10px">
-                  <Button  colorScheme={"blue"}>
+                  <Button size={"sm"} colorScheme={"facebook"}>
                     Active
                   </Button>
-                  <Button color={"black"} colorScheme={"white"}>
+                  <Button size={"sm"} color={"black"} colorScheme={"white"}>
                     New
                   </Button>
-                  <Button color={"black"} colorScheme={"white"}>
+                  <Button size={"sm"} color={"black"} colorScheme={"white"}>
                     Declined
                   </Button>
-                  <Button color={"black"} colorScheme={"white"}>
+                  <Button size={"sm"} color={"black"} colorScheme={"white"}>
                     cancelled
                   </Button>
-                  <Button color={"black"} colorScheme={"white"}>
+                  <Button size={"sm"} color={"black"} colorScheme={"white"}>
                     Filter - {"count"}
                   </Button>
-                  <Button color={"facebook.300"} colorScheme={"white"}>
+                  <Button
+                    size={"sm"}
+                    color={"facebook.300"}
+                    colorScheme={"white"}>
                     clear all
                   </Button>
                 </Flex>
-                <Box marginTop={"60px"}>
-                  <Flex justifyContent={"space-between"}>
-                    <Button
-                      rightIcon={<FaSort />}
-                      color={"black"}
-                      colorScheme={"white"}>
-                      Name
-                    </Button>
-                    <Button
-                      rightIcon={<FaSort />}
-                      color={"black"}
-                      colorScheme={"white"}>
-                      Email
-                    </Button>
-                    <Button
-                      rightIcon={<FaSort />}
-                      color={"black"}
-                      colorScheme={"white"}>
-                      Current Tier
-                    </Button>
-                    <Button
-                      rightIcon={<FaSort />}
-                      color={"black"}
-                      colorScheme={"white"}>
-                      Pledge
-                    </Button>
-                    <Button
-                      rightIcon={<FaSort />}
-                      color={"black"}
-                      colorScheme={"white"}>
-                      Lifetime
-                    </Button>
-                    <Button color={"black"} colorScheme={"white"}>
-                      Status
-                    </Button>
-                    <Button
-                      rightIcon={<FaSort />}
-                      color={"black"}
-                      colorScheme={"white"}>
-                      Join Date
-                    </Button>
-                    <Button
-                      rightIcon={<FaSort />}
-                      color={"black"}
-                      colorScheme={"white"}>
-                      Last Charge
-                    </Button>
-                  </Flex>
 
-                  <Box>things would render here</Box>
+                <Box marginTop={"40px"}>
+                  <Box
+                    borderWidth={"1px"}
+                    borderRadius="4px"
+                    p={2}
+                    boxSizing="border-box">
+                    {/* table data */}
+                    <TableContainer>
+                      <Table size="sm">
+                        <Thead>
+                          <Tr>
+                            <Th>
+                              <Button
+                                size={"sm"}
+                                rightIcon={<FaSort />}
+                                color={"black"}
+                                colorScheme={"white"}>
+                                Name
+                              </Button>
+                            </Th>
+
+                            <Th>
+                              <Button
+                                size={"sm"}
+                                rightIcon={<FaSort />}
+                                color={"black"}
+                                colorScheme={"white"}>
+                                Email
+                              </Button>
+                            </Th>
+
+                            <Th>
+                              <Button
+                                size={"sm"}
+                                rightIcon={<FaSort />}
+                                color={"black"}
+                                colorScheme={"white"}>
+                                Current Tier
+                              </Button>
+                            </Th>
+                            <Th>
+                              <Button
+                                size={"sm"}
+                                rightIcon={<FaSort />}
+                                color={"black"}
+                                colorScheme={"white"}>
+                                Pledge
+                              </Button>
+                            </Th>
+                            <Th>
+                              <Button
+                                size={"sm"}
+                                color={"black"}
+                                colorScheme={"white"}>
+                                Status
+                              </Button>
+                            </Th>
+                            <Th>
+                              <Button
+                                size={"sm"}
+                                rightIcon={<FaSort />}
+                                color={"black"}
+                                colorScheme={"white"}>
+                                Join Date
+                              </Button>
+                            </Th>
+                          </Tr>
+                        </Thead>
+
+                        <Tbody h={"40vh"} verticalAlign="top">
+                          {
+                            patrons.map(patron => (
+                              
+                              <Tr key={patron.email}>
+                            <Td>{patron.name}</Td>
+                            <Td>{patron.email}</Td>
+                            <Td>{patron.current_tier}</Td>
+                            <Td>{patron.pledge}</Td>
+                            <Td>{patron.status}</Td>
+                            <Td>{patron.join_date}</Td>
+                          </Tr>
+                              ))
+                          }
+                        </Tbody>
+                      </Table>
+                    </TableContainer>
+                  </Box>
                 </Box>
               </>
             </TabPanel>

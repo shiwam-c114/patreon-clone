@@ -106,12 +106,12 @@ function _ByMediaTier(post) {
           width={"5rem"}
 
           height={"5rem"}
-          position="absolute"
-          left={"55%"}
-          top={"250px"}
+          position="relative"
+          left={"47%"}
+          top={"-10"}
           borderRadius={"50px"}
           src={`${userData?.creator_mode?.profilePic}`}></Img>
-        <Box>
+        <Box marginTop={"-70px"}>
           <Flex justifyContent={"end"} gap={"10px"} padding={"10px"}>
             <CreateButton props={{ openBox, setOpenBox }} />
             <Button
@@ -347,7 +347,7 @@ function _ByMediaTier(post) {
                     : (a, b) => b.index - a.index
                   )
                   .map((post) => (
-                    <Post property={post} />
+                    <Post id={userData.id} property={post} />
                   ))}
               </Box>
             </TabPanel>
