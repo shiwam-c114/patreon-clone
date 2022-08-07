@@ -13,13 +13,15 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Payments } from "./components/Payments";
 import Payouts from "./components/Dashboard/Payouts";
+import {CreatePost} from "./pages/creators/create/CreatePost";
+
 function App() {
   return (
    <>
    {
         //This Will Not show Navbar at payment page as we have sidebar on payment page 
-        location.pathname !== '/payment' && <Navbar />
-      }
+        location.pathname !== '/payment' ||location.pathname !== '/creatorhome' && <Navbar />
+   }
    <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/login" element={<Login/>}/>
@@ -33,6 +35,7 @@ function App() {
     <Route path="/pricing" element={<Pricing />} />
     <Route path="/payouts" element={<Payouts />}/>
     <Route path="/payment" element={<Payments />} />
+    <Route path="/createpost" element={<CreatePost />} />
    </Routes>
    <Footer />
    </>

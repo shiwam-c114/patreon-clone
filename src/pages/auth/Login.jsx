@@ -122,7 +122,7 @@ export const Login=()=> {
           </Box>
           <Text align={'center'} fontSize={'1xl'}>Don't have an account? <Button padding={"0px"} onClick={()=>{navigate("/signUp")}} bg={'heritance'}><Link to={"/login"} color={'blue.400'}>Sign up</Link></Button></Text>
         </Stack>
-      </Flex>): <Navigate to={"/"}></Navigate>
+      </Flex>): <Navigate to={"/createpost"}></Navigate>
       
       }
       </>

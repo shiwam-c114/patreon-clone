@@ -11,3 +11,4 @@ export const store=createStore(rootReducer,compose(applyMiddleware(thunk)));
 store.subscriber=()=>{
     console.log("State:", store.getState());
 }
+
