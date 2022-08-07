@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import { Login } from "./pages/auth/Login";
 import { SignUp } from "./pages/auth/SignUp";
 import CreatorHome from "./pages/dashboard/Creator/CreatorHome";
@@ -11,11 +11,23 @@ import Pro from "./pages/products/Pro";
 import { EditPage } from "./pages/creators/edit/EditPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { PostPage } from "./pages/creators/postsEdit/PostPage";
-import { FeedCard } from "./components/patron/feed/FeedCard";
-import { Membershipcard } from "./pages/patron/membership/Membershipcard";
 import { MembershipPage } from "./pages/patron/membership/MembershipPage";
+import Video from "./pages/creators/Video";
+import Podcast from "./pages/creators/Podcast";
+import Music from "./pages/creators/Music";
+import VisualArtist from "./pages/creators/VisualArtist";
+import Community from "./pages/creators/Community";
+import Writing from "./pages/creators/Writing";
+import Gaming from "./pages/creators/Gaming";
+import Nonprofits from "./pages/creators/Nonprofits";
+import Toturial from "./pages/creators/Toturial";
+import LocalBisnesses from "./pages/creators/LocalBisnesses";
+import { Payments } from "./components/Payments";
+import Payouts from "./components/Dashboard/Payouts";
+import { CreatePost } from "./pages/creators/create/CreatePost";
 function App() {
+  let a = useParams()
+  console.log(a, "--a");
   return (
    <>
    <Routes>
@@ -30,8 +42,46 @@ function App() {
     <Route path="/creatorhome" element={<CreatorHome />} />
    </Routes>
    {/* <Footer /> */}
-   </>
+      {
+        //This Will Not show Navbar at payment page as we have sidebar on payment page 
+        
+        window.location.pathname != '/payment' || window.location.pathname != '/creatorhome' ?
+        <Navbar />
+        :
+        <></>
+      }
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/products/lite" element={<Lite />} />
+        <Route path="/products/premium" element={<Premium />} />
+        <Route path="/products/pro" element={<Pro />} />
+        <Route path="/creatorhome" element={<CreatorHome />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/payouts" element={<Payouts />} />
+        <Route path="/payment" element={<Payments />} />
+        <Route path="/createpost" element={<CreatePost />} />
+        <Route path="Podcast" element={<Podcast />} />
+        <Route path="Music" element={<Music />} />
+        <Route path="Video" element={<Video />} />
+        <Route path="VisualArtist" element={<VisualArtist />} />
+        <Route path="Community" element={<Community />} />
+        <Route path="Writing" element={<Writing />} />
+        <Route path="Gaming" element={<Gaming />} />
+        <Route path="Nonprofits" element={<Nonprofits />} />
+        <Route path="Toturial" element={<Toturial />} />
+        <Route path="LocalBisnesses" element={<LocalBisnesses />} />
+      </Routes>
+      {
+        //This Will Not show Navbar at payment page as we have sidebar on payment page 
+        window.location.pathname !== '/payment' || window.location.pathname !== '/creatorhome' &&
+        <Footer />
+      }
+    </>
   );
 }
 
 export default App;
+

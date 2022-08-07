@@ -2,13 +2,14 @@ import React from "react";
 import { Box, Button, Flex, Image, Text, Grid } from "@chakra-ui/react";
 
 function CreaterHero({ props }) {
+  // sa,ple data base
   // const obj = {
-  //   title: "PATREON FOR MUSICIANS",
-  //   image:
-  //     "https://i.pinimg.com/originals/f4d7c8a1b0e6c9c3c2c5c1769f0766/68747470733",
-  //   description:
+  //   Maintitle: "MUSICIANS",
+  //   Maintitle1: "musicians ",
+  //   Mainimage:
+  //     "https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/musicians-v3-zolajesus.jpg",
+  //   Maindescription:
   //     "Connect directly and build community with your most engaged fans.Test new work in a supportive environment. Establish a reliable, recurring revenue stream.",
-  //   midtytle: "Musicians",
   //   midsetion1title: "Predictable & sustainable revenue",
   //   midsection1desc:
   //     "Monthly pledges means you know exactly what you're getting paid each month.",
@@ -21,6 +22,27 @@ function CreaterHero({ props }) {
   //   image1:
   //     "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/2476694/13e6a9537bdb4e90b3ae2ec6fe7a8d22/4.jpg?token-time=2145916800&token-hash=yNzsQHMHLjd5HOOLl1YFlfvsiUxtzVmFIgwSexUDBCs%3D",
   //   image1title: "Ben Folds",
+  //   image2:
+  //     "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/2139240/cf145f0e1b1b4be5b5ffa6ff048c4668/1.jpg?token-time=2145916800&token-hash=I0XKN7taOSf0oswHgWXtAKu2ItFNphwnN9JOmeTCuUE%3D",
+  //   image2title: "Alissa White-Gluz",
+  //   image3:
+  //     "https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/RAC.jpg",
+  //   image3title: "RAC",
+  //   image4:
+  //     "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/3317958/c1e89a96d6b544a18f444376c31773e3/4.jpg?token-time=2145916800&token-hash=Jt1UXFa4F-90YVYebqND_qlPAUCIHt62Fh1B6pXZ-40%3D",
+  //   image4title: "KIMBRA",
+  //   image5:
+  //     "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/71481/793ffac76193494c9d4c3bcf9ec2b4fd/9.jpg?token-time=2145916800&token-hash=0OoRUxRvO7mJkAHIA0anmGk5ATvjU-P3gxhJZKMKt-8%3D",
+  //   image5title: "Amanda Palmer",
+  //   image6:
+  //     "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/3137232/4ea330ff8eb949a9ae7266ffee698aa3/4.jpg?token-time=2145916800&token-hash=CD6aUlBj8v9Iy2n2R3y8dcSTCCzTQTdxTDZa2-FKNlw%3D",
+  //   image6title: "CORY HENRY THE GATHERING",
+  //   image7:
+  //     "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/3388179/241418f34e654b9ba4f498945590c3ca/2.jpg?token-time=2145916800&token-hash=wGb5MunB4BVG07u0Y0pjxgnlrf8N3k9qDEBimEk5tUM%3D",
+  //   image7title: "Cautious Clay",
+  //   image8:
+  //     "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/90726/aa8d1b2c88064b5cbe29c6b7d3312f5f/9.jpeg?token-time=2145916800&token-hash=Mn4fbelytRt1MjiUXHjYktmCtE5CFcrYCjln_p8u0oE%3D",
+  //   image8title: "Jacob Collier",
 
   //   bottomimage:
   //     "https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/musician-benfolds-testimonial_2x.png",
@@ -38,16 +60,20 @@ function CreaterHero({ props }) {
         // gap={10}
       >
         <Flex w="30%">
-          <Image alt={"Music  Image"} objectFit={"cover"} src={props.image} />
+          <Image
+            alt={"Music  Image"}
+            objectFit={"cover"}
+            src={props.Mainimage}
+          />
         </Flex>
         <Flex w="40%" direction={"column"} my="auto" fontSize="1.2em">
           <Box>
             <Text fontWeight="900" fontSize="2.2em">
-              {props.title}
+              PATREON FOR {props.Maintitle}
             </Text>
           </Box>
           <Box>
-            <Text py={8}>{props.description}</Text>
+            <Text py={8}>{props.Maindescription}</Text>
           </Box>
           <Box>
             <Button colorScheme="red" size={"md"} borderRadius="20" px="4">
@@ -65,7 +91,7 @@ function CreaterHero({ props }) {
             color="white"
             fontSize={"35px"}
           >
-            <Text>Why should musicians use membership?</Text>
+            <Text>Why should {props.Maintitle1} use membership?</Text>
           </Box>
           <Box
             display="flex"
@@ -116,12 +142,9 @@ function CreaterHero({ props }) {
                 </svg>
               </Box>
               <Text fontSize="25" fontWeight={"750"}>
-                Predictable & sustainable revenue
+                {props.midsetion1title}
               </Text>
-              <Text>
-                Monthly pledges means you know exactly what you're getting paid
-                each month.
-              </Text>
+              <Text>{props.midsection1desc}</Text>
             </Box>
             <Box textAlign="center">
               <Box width="35%" mx="auto" py={"10"}>
@@ -155,12 +178,9 @@ function CreaterHero({ props }) {
                 </svg>
               </Box>
               <Text fontSize="25" fontWeight={"750"}>
-                Retain full control
+                {props.midsetion2title}
               </Text>
-              <Text>
-                Still want to run ads, do brand deals, or work with sponsors?
-                Cool with us!
-              </Text>
+              <Text>{props.midsection2desc}</Text>
             </Box>
             <Box textAlign="center">
               <Box width="35%" mx="auto" py={"10"}>
@@ -193,12 +213,9 @@ function CreaterHero({ props }) {
                 </svg>
               </Box>
               <Text fontSize="25" fontWeight={"750"}>
-                Your music, your schedule
+                {props.midsetion3title}
               </Text>
-              <Text>
-                Posting tracks weekly? Waiting to release an album? No matter
-                what, you call the shots.
-              </Text>
+              <Text>{props.midsection3desc}</Text>
             </Box>
           </Box>
         </Flex>
@@ -212,7 +229,7 @@ function CreaterHero({ props }) {
           fontSize={"40px"}
           pb={"50"}
         >
-          <Text>Popular features for musicians</Text>
+          <Text>Popular features for {props.Maintitle1}</Text>
         </Box>
         <Grid
           templateColumns="repeat(3, 1fr)"
@@ -222,46 +239,25 @@ function CreaterHero({ props }) {
           fontSize={"20"}
         >
           <Box>
-            <Image
-              src={
-                "https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/For-video-creators-01_2x.jpg"
-              }
-              boxShadow="2xl"
-              w="80%"
-            />
+            <Image src={props.popularsection1image} boxShadow="2xl" w="80%" />
             <Text fontWeight={"700"} color="red" py={5}>
-              Gated content
+              {props.popularsection1title}
             </Text>
-            <Text>
-              Offer access to your unreleased music libraries or early access to
-              new albums.
-            </Text>
+            <Text>{props.popularsection1desc}</Text>
           </Box>
           <Box>
-            <Image
-              src={
-                "https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/For-podcasters-03_2x.jpg"
-              }
-              boxShadow="2xl"
-              w="80%"
-            />
+            <Image src={props.popularsection2image} boxShadow="2xl" w="80%" />
             <Text fontWeight={"700"} color="red" py={5}>
-              Manage benefits & merch
+              {props.popularsection2title}
             </Text>
-            <Text>Easily track and fulfill membership benefits quickly.</Text>
+            <Text>{props.popularsection2desc}</Text>
           </Box>
           <Box>
-            <Image
-              src={
-                "https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/For-video-creators-01_2x.jpg"
-              }
-              boxShadow="2xl"
-              w="80%"
-            />
+            <Image src={props.popularsection3image} boxShadow="2xl" w="80%" />
             <Text fontWeight={"700"} color="red" py={5}>
-              Direct fan engagement
+              {props.popularsection3title}
             </Text>
-            <Text>Tools to message and engage with your members directly.</Text>
+            <Text>{props.popularsection3desc}</Text>
           </Box>
         </Grid>
       </Flex>
@@ -281,104 +277,56 @@ function CreaterHero({ props }) {
         >
           <Box>
             <Text fontSize={"40px"} fontWeight="800" color={"black"} pb="10">
-              Notable musicians on Patreon
+              Notable {props.Maintitle1} on Patreon
             </Text>
           </Box>
           <Grid templateColumns="repeat(4, 1fr)" gap={8} textAlign="center">
             <Box>
-              <Image
-                src={
-                  "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/2476694/13e6a9537bdb4e90b3ae2ec6fe7a8d22/4.jpg?token-time=2145916800&token-hash=yNzsQHMHLjd5HOOLl1YFlfvsiUxtzVmFIgwSexUDBCs%3D"
-                }
-                h="250px"
-                w="200px"
-              />
+              <Image src={props.image1} h="250px" w="200px" />
               <Text fontSize={"20px"} fontWeight="bold">
-                Ben Folds
+                {props.image1title}
               </Text>
             </Box>
             <Box>
-              <Image
-                src={
-                  "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/2139240/cf145f0e1b1b4be5b5ffa6ff048c4668/1.jpg?token-time=2145916800&token-hash=I0XKN7taOSf0oswHgWXtAKu2ItFNphwnN9JOmeTCuUE%3D"
-                }
-                h="250px"
-                w="200px"
-              />
+              <Image src={props.image2} h="250px" w="200px" />
               <Text fontSize={"20px"} fontWeight="bold">
-                Alissa White-Gluz
+                {props.image2title}
               </Text>
             </Box>
             <Box>
-              <Image
-                src={
-                  "https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/RAC.jpg"
-                }
-                h="250px"
-                w="200px"
-              />
+              <Image src={props.image3} h="250px" w="200px" />
               <Text fontSize={"20px"} fontWeight="bold">
-                BRAC
+                {props.image3title}
               </Text>
             </Box>
             <Box>
-              <Image
-                src={
-                  "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/3317958/c1e89a96d6b544a18f444376c31773e3/4.jpg?token-time=2145916800&token-hash=Jt1UXFa4F-90YVYebqND_qlPAUCIHt62Fh1B6pXZ-40%3D"
-                }
-                h="250px"
-                w="200px"
-              />
+              <Image src={props.image4} h="250px" w="200px" />
               <Text fontSize={"20px"} fontWeight="bold">
-                KIMBRA
+                {props.image4title}
               </Text>
             </Box>
             <Box>
-              <Image
-                src={
-                  "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/71481/793ffac76193494c9d4c3bcf9ec2b4fd/9.jpg?token-time=2145916800&token-hash=0OoRUxRvO7mJkAHIA0anmGk5ATvjU-P3gxhJZKMKt-8%3D"
-                }
-                h="250px"
-                w="200px"
-              />
+              <Image src={props.image5} h="250px" w="200px" />
               <Text fontSize={"20px"} fontWeight="bold">
-                Amanda Palmer
+                {props.image5title}
               </Text>
             </Box>
             <Box>
-              <Image
-                src={
-                  "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/3137232/4ea330ff8eb949a9ae7266ffee698aa3/4.jpg?token-time=2145916800&token-hash=CD6aUlBj8v9Iy2n2R3y8dcSTCCzTQTdxTDZa2-FKNlw%3D"
-                }
-                h="250px"
-                w="200px"
-              />
+              <Image src={props.image6} h="250px" w="200px" />
               <Text fontSize={"20px"} fontWeight="bold">
-                CORY HENRY THE GATHERING
+                {props.image6title}
               </Text>
             </Box>
             <Box>
-              <Image
-                src={
-                  "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/3388179/241418f34e654b9ba4f498945590c3ca/2.jpg?token-time=2145916800&token-hash=wGb5MunB4BVG07u0Y0pjxgnlrf8N3k9qDEBimEk5tUM%3D"
-                }
-                h="250px"
-                w="200px"
-              />
+              <Image src={props.image7} h="250px" w="200px" />
               <Text fontSize={"20px"} fontWeight="bold">
-                Cautious Clay
+                {props.image7title}
               </Text>
             </Box>
             <Box>
-              <Image
-                src={
-                  "https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/90726/aa8d1b2c88064b5cbe29c6b7d3312f5f/9.jpeg?token-time=2145916800&token-hash=Mn4fbelytRt1MjiUXHjYktmCtE5CFcrYCjln_p8u0oE%3D"
-                }
-                h="250px"
-                w="200px"
-              />
+              <Image src={props.image8} h="250px" w="200px" />
               <Text fontSize={"20px"} fontWeight="bold">
-                Jacob Collier
+                {props.image8title}
               </Text>
             </Box>
           </Grid>
@@ -398,23 +346,15 @@ function CreaterHero({ props }) {
           mx="auto"
         >
           <Box textAlign={"center"} px="20">
-            <Image
-              src="https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/musician-benfolds-testimonial_2x.png"
-              w="700px"
-              pb={"8"}
-            />
+            <Image src={props.bottomimage} w="700px" pb={"8"} />
             <Text fontSize="18" fontWeight="bold">
-              BEN FOLDS
+              {props.bottomname}
             </Text>
-            <Text>Musician</Text>
+            <Text>{props.bottomtitle}</Text>
           </Box>
           <Box alignItems={"center"} pl="30">
             <Text fontSize="38" fontWeight="bold">
-              "Like all recording artists, I've kept my eye on what creative
-              tools the internet might afford. Patreon is unique; it's a
-              platform that interests me. I've spent an entire career traveling,
-              coming to your towns to play music. Now I'm inviting you to my
-              place."
+              "{props.bottommsg}"
             </Text>
           </Box>
         </Flex>
