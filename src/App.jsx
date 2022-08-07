@@ -5,10 +5,12 @@ import Footer from "./components/Footer";
 import { Payments } from "./components/Payments";
 import { PostPage } from "./pages/creators/postsEdit/PostPage";
 import { FeedCard } from "./components/patron/feed/FeedCard";
+import { Membershipcard } from "./pages/patron/membership/Membershipcard";
 function App() {
   return (
     <>
     <FeedCard/>
+    <Membershipcard/>
       {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/footer" element={<Footer />} />

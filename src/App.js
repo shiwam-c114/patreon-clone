@@ -13,11 +13,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { PostPage } from "./pages/creators/postsEdit/PostPage";
 import { FeedCard } from "./components/patron/feed/FeedCard";
+import { Membershipcard } from "./pages/patron/membership/Membershipcard";
+import { MembershipPage } from "./pages/patron/membership/MembershipPage";
 function App() {
   return (
    <>
    <Routes>
-    <Route path="/" element={<FeedCard/>}/>
+    <Route path="/" element={<MembershipPage/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signUp" element={<SignUp/>}/>
     <Route path="/pricing" element={<Pricing/>}/>
