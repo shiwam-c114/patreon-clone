@@ -8,8 +8,10 @@ import Pricing from "./pages/pricing/Pricing"
 import Lite from "./pages/products/Lite";
 import Premium from "./pages/products/Premium";
 import Pro from "./pages/products/Pro";
+import { EditPage } from "./pages/creators/edit/EditPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+<<<<<<< HEAD
 import Video from "./pages/creators/Video";
 import Podcast from "./pages/creators/Podcast";
 import Music from "./pages/creators/Music";
@@ -46,7 +48,39 @@ function App() {
       </Routes>
       <Footer />
     </>
+=======
+import { Payments } from "./components/Payments";
+import Payouts from "./components/Dashboard/Payouts";
+import {CreatePost} from "./pages/creators/create/CreatePost";
+
+function App() {
+  return (
+   <>
+   {
+        //This Will Not show Navbar at payment page as we have sidebar on payment page 
+        location.pathname !== '/payment' ||location.pathname !== '/creatorhome' && <Navbar />
+   }
+   <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/signUp" element={<SignUp/>}/>
+    <Route path="/pricing" element={<Pricing/>}/>
+    <Route path="/products/lite" element={<Lite/>}/>
+    <Route path="/products/premium" element={<Premium/>}/>
+    <Route path="/products/pro" element={<Pro/>}/>
+    <Route path="/creatorEditPage" element={<EditPage/>}/>
+    <Route path="/creatorhome" element={<CreatorHome />} />
+    <Route path="/pricing" element={<Pricing />} />
+    <Route path="/payouts" element={<Payouts />}/>
+    <Route path="/payment" element={<Payments />} />
+    <Route path="/createpost" element={<CreatePost />} />
+   </Routes>
+   <Footer />
+   </>
+
+>>>>>>> 20e0a5adb8e4dac187fdee83931bcaada42fd297
   );
 }
 
 export default App;
+

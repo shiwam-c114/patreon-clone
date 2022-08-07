@@ -11,7 +11,11 @@ import {
   Box,
 } from "@chakra-ui/react";
 
+<<<<<<< HEAD
 // import { FaRegEdit } from "react-icons/fa";
+=======
+import { FaRegEdit } from "react-icons/fa";
+>>>>>>> 20e0a5adb8e4dac187fdee83931bcaada42fd297
 
 export default function CreateButton({ props }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -23,7 +27,11 @@ export default function CreateButton({ props }) {
         {/* <Button leftIcon={<FaRegEdit fill='black' />} colorScheme="whiteAlpha" margin="0 20px" width="12rem"  color="black" fontSize={"sm"} textAlign="center" variant={"outline"} onClick={onOpen}>Create 2</Button> */}
       </Box>
 
+<<<<<<< HEAD
       <Modal isOpen={openBox || isOpen} onClose={onClose}>
+=======
+      <Modal isCentered isOpen={openBox || isOpen} onClose={onClose}>
+>>>>>>> 20e0a5adb8e4dac187fdee83931bcaada42fd297
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
@@ -41,8 +49,12 @@ export default function CreateButton({ props }) {
               onClick={() => {
                 onClose();
                 setOpenBox(!openBox);
+<<<<<<< HEAD
               }}
             >
+=======
+              }}>
+>>>>>>> 20e0a5adb8e4dac187fdee83931bcaada42fd297
               Close
             </Button>
             <Button variant="ghost">Secondary Action</Button>
