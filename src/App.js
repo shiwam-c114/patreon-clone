@@ -25,15 +25,16 @@ import LocalBisnesses from "./pages/creators/LocalBisnesses";
 import { Payments } from "./components/Payments";
 import Payouts from "./components/Dashboard/Payouts";
 import { CreatePost } from "./pages/creators/create/CreatePost";
+import { useSelector } from "react-redux";
+import PatronHome from "./pages/dashboard/Patron/PatronHome";
 function App() {
-  let a = useParams()
-  console.log(a, "--a");
+  const { token } = useSelector(state => state.auth);
+
   return (
     <>
       {
         //This Will Not show Navbar at payment page as we have sidebar on payment page 
-        
-        window.location.pathname != '/payment' || window.location.pathname != '/creatorhome' ?
+         !token?
         <Navbar />
         :
         <></>
@@ -61,10 +62,11 @@ function App() {
         <Route path="Nonprofits" element={<Nonprofits />} />
         <Route path="Toturial" element={<Toturial />} />
         <Route path="LocalBisnesses" element={<LocalBisnesses />} />
+        <Route path="/patronHome" element={<PatronHome />} />
       </Routes>
       {
         //This Will Not show Navbar at payment page as we have sidebar on payment page 
-        window.location.pathname !== '/payment' || window.location.pathname !== '/creatorhome' &&
+        !token &&
         <Footer />
       }
     </>
