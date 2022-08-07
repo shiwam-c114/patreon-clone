@@ -16,7 +16,7 @@ import {
   import { ViewOffIcon } from "@chakra-ui/icons"
 import { handleUserLoginFetch } from '../../redux/auth/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
   const loginDetails={
@@ -25,6 +25,7 @@ import { Navigate } from 'react-router-dom';
   }
 export const Login=()=> {
     // console.log("rendering Login");
+  const navigate = useNavigate()
     const [userAuthData, setUserAuthData]=React.useState(loginDetails)
     const {email, password}=userAuthData
     const dispatch=useDispatch();
@@ -51,7 +52,7 @@ export const Login=()=> {
         minH={'100vh'} 
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')}>
+        bg='gray.50'>
         <Stack spacing={8} mx={'auto'} minW={"lg"} maxW={'xlg'} py={12} px={6}>
           <Stack align={'center'}>
             <Text fontSize={'3xl'}>Log in</Text>
@@ -61,7 +62,7 @@ export const Login=()=> {
           </Stack>
           <Box
             rounded={'lg'}
-            bg={useColorModeValue('white', 'gray.700')}
+            bg={'white'}
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
@@ -122,7 +123,7 @@ export const Login=()=> {
           </Box>
           <Text align={'center'} fontSize={'1xl'}>Don't have an account? <Button padding={"0px"} onClick={()=>{navigate("/signUp")}} bg={'heritance'}><Link to={"/login"} color={'blue.400'}>Sign up</Link></Button></Text>
         </Stack>
-      </Flex>): <Navigate to={"/createpost"}></Navigate>
+      </Flex>): <Navigate to={"/creatorhome"}></Navigate>
       
       }
       </>

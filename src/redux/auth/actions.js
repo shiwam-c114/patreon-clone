@@ -47,7 +47,7 @@ export const handleUserLoginFetch = (enteredData) => (dispatch) => {
 
     // console.log("in redux action data is : ", enteredData)
     dispatch(handleLoginLoading())
-    fetch(`http://localhost:3001/users?email=${enteredData.email}&password=${enteredData.password}`)
+    fetch(`https://patreon-data.herokuapp.com/users?email=${enteredData.email}&password=${enteredData.password}`)
         .then(res => res.json())
         .then(data => {
             // console.log("success and data is:", data[0].id);
