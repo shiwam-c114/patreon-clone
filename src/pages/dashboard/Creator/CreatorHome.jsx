@@ -14,13 +14,14 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { CgInsights } from "react-icons/cg";
 import { HiOutlineDatabase } from "react-icons/hi";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { Payments } from "../../../components/Payments";
 
 const LinkItems = [
   { name: "My page", icon: FiHome },
   { name: "Patrons", icon: IoPeopleOutline },
   { name: "Insights", icon: CgInsights },
   { name: "Payouts", icon: HiOutlineDatabase },
-  { name: "Messages", icon: FiMail },
+  { name: "messages", icon: FiMail },
   { name: "Notifications", icon: IoIosNotificationsOutline },
   { name: "Settings", icon: FiSettings },
 ];
@@ -57,6 +58,8 @@ function CreatorHome() {
               <Insights userData={userData} />
             ) : sidebarButtonValue === "Payouts" ? (
               <Payouts userData={userData} />
+            ) : sidebarButtonValue === "payment" ? (
+              <Payments />
             ) : (
               <></>
             )}

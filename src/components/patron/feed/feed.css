@@ -12,8 +12,11 @@
 .feedCard{
     display:flex;
     flex-direction:column;
-    border: 2px solid red;
-    width:500px;
+    border-radius: 5px;
+    border-width: 1px;
+   margin-bottom: 20px;
+    /* border: 2px solid red; */
+    /* width:max-content; */
     box-sizing:border-box;
     padding:15px
 }

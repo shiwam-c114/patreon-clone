@@ -52,7 +52,7 @@ export const authReducer=(store=authInitialData, action)=>{
         case USER_LOG_OUT:
             return{
                 ...store,
-                token:"",
+                token:null,
             }    
         default:
             return {

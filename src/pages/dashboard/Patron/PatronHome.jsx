@@ -10,8 +10,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { fetchUserData } from "../../../redux/userData/action";
 import { FiMail, FiSettings } from "react-icons/fi";
+import { IoCompassOutline } from "react-icons/io5";
+import { BsCompass } from "react-icons/bs";
+import { MdOutlineFeed } from "react-icons/md";
+import { FeedCard } from "../../../components/patron/feed/FeedCard";
+import { MembershipPage } from "../../patron/membership/MembershipPage";
+import FindCreator from "../../../components/Dashboard/Patron/FindCreator";
+import { Feed } from "../../../components/patron/feed/Feed";
+import { Payments } from "../../../components/Payments";
 const LinkItems = [
-  
+  { name: "Feed", icon: MdOutlineFeed },
+  { name: "Find creators", icon: BsCompass },
   { name: "Messages", icon: FiMail },
   { name: "Settings", icon: FiSettings },
 ];
@@ -20,12 +29,11 @@ function PatronHome() {
   const { token } = useSelector((state) => state.auth);
   const [sidebarButtonValue] = useContext(SidebarContext);
   // const [userData, setUserData] = useState({});
-    const { userData } = useSelector((state) => state.userData);
-    const dispatch = useDispatch();
-
+  const { userData } = useSelector((state) => state.userData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-      dispatch(fetchUserData(token));
+    dispatch(fetchUserData(token));
   }, []);
 
   return (
@@ -41,14 +49,16 @@ function PatronHome() {
               <Center h="100vh">
                 <CircularProgress isCentered isIndeterminate color="blue.600" />
               </Center>
-            ) : sidebarButtonValue === "My page" ? (
-              <MyPage userData={userData} />
-            ) : sidebarButtonValue === "Patrons" ? (
-              <Patrons userData={userData} />
-            ) : sidebarButtonValue === "Insights" ? (
-              <Insights userData={userData} />
-            ) : sidebarButtonValue === "Payouts" ? (
-              <Payouts userData={userData} />
+            ) : sidebarButtonValue === "Feed" ? (
+              <Feed />
+            ) : sidebarButtonValue === "Messages" ? (
+              <></>
+            ) : sidebarButtonValue === "Find creators" ? (
+              <FindCreator />
+            ) : sidebarButtonValue === "payment" ? (
+              <Payments />
+            ) : sidebarButtonValue === "membershippage" ? (
+              <MembershipPage />
             ) : (
               <></>
             )}

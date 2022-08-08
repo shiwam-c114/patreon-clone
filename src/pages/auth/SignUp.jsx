@@ -57,17 +57,19 @@ export const SignUp = () => {
         }
       }
 
-        fetch(`http://localhost:3001/users`,{ 
+        fetch(`https://patreon-data.herokuapp.com/users`, {
           method: "POST",
           body: JSON.stringify(payload),
           headers: {
-            "Content-Type": "application/json"
-          }
+            "Content-Type": "application/json",
+          },
         })
-          .then(res => res.json())
-          .then(data => {console.log(data)
-             navigate('/login')})
-          .catch(err => console.log(err))
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            navigate("/login");
+          })
+          .catch((err) => console.log(err));
       
     }
 

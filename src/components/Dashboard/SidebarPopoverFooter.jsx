@@ -16,10 +16,12 @@ import {
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { handleLogOut } from "../../redux/auth/actions";
 import { fetchUserData } from "../../redux/userData/action";
 import { NavItem } from "./Sidebar";
 
 function SidebarPopoverFooter({ LinkItem }) {
+  
   const { token } = useSelector((state) => state.auth);
   const { userData } = useSelector((state) => state.userData);
   const dispatch = useDispatch();
@@ -132,7 +134,7 @@ function SidebarPopoverFooter({ LinkItem }) {
           <PopoverFooter>
             <NavItem>Creator resources</NavItem>
             <NavItem>Help center & FAQ</NavItem>
-            <NavItem>Log out</NavItem>
+            <NavItem onClick={()=>{dispatch(handleLogOut());}} >Log out</NavItem>
           </PopoverFooter>
         </PopoverContent>
       </Popover>

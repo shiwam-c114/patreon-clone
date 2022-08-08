@@ -41,6 +41,7 @@ import { IoMdSettings } from "react-icons/io";
 import { BsImage } from "react-icons/bs";
 import Post from "./Post";
 import CreateButton from "./CreateButton";
+import { MembershipPage } from "../../pages/patron/membership/MembershipPage";
 
 function MyPage({ userData }) {
   const { isOpen, onToggle, onOpen, onClose } = useDisclosure();
@@ -353,7 +354,7 @@ function _ByMediaTier(post) {
             </TabPanel>
             {/* initially not mounted */}
             <TabPanel>
-              <p>two!</p>
+             <MembershipPage />
             </TabPanel>
           </TabPanels>
         </Tabs>
