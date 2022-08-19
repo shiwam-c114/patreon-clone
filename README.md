@@ -2,7 +2,7 @@
 
 Clone of <a href="https://www.patreon.com/">www.patreon.com</a> Patreon is a membership platform that provides business tools for content creators to run a subscription service. It helps creators and artists earn a monthly income by providing rewards and perks to their subscribers.
 
-<img src="https://snipboard.io/f6IEyq.jpg"/>
+<img src="https://snipboard.io/Z9u4EM.jpg"/>
 
 ## Installation
 
