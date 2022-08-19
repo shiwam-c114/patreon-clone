@@ -38,7 +38,8 @@ npm start
 ## Features
 - Sign Up and Login
 - Membership 
-- Patreon page
+- Patron dashboard
+- Creator dashboard
 - sort, filter, search your patreons 
 - Payment & checkout
 
